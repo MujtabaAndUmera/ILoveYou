@@ -1,0 +1,77 @@
+.lovemessage-container {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  cursor: pointer;
+  background-color: black; /* Keeps the theme */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Ensure space for title */
+}
+
+.heart-wrapper {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+  animation: moveAcross var(--duration) ease-in-out forwards,
+    fadeOut var(--duration) linear forwards,
+    scaleUp var(--duration) ease-in-out forwards;
+}
+
+.heart-icon {
+  font-size: 200px;
+  color: red;
+}
+
+.heart-text {
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  width: 90px;
+  text-shadow: 2px 2px 4px black;
+  line-height: 1.3;
+}
+
+/* Move the heart to a completely random position */
+@keyframes moveAcross {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    left: var(--endX);
+    top: var(--endY);
+  }
+}
+
+/* Heart scaling effect */
+@keyframes scaleUp {
+  0% {
+    transform: scale(0);
+  }
+  33% {
+    transform: scale(1);
+  }
+  66% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(var(--scale));
+  }
+}
+
+/* Fading effect */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
