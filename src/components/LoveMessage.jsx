@@ -6,33 +6,35 @@ import loveReasons from "./loveReasons";
 const Lovemessage = () => {
   const [hearts, setHearts] = useState([]);
 
-  const handleClick = (e) => {
-    const x = e.clientX;
-    const y = e.clientY;
+const handleClick = (e) => {
+  const heartSize = 100; // Adjust if needed, depends on actual heart size
 
-    const screenWidth = window.innerWidth;
-    const screenHeight = window.innerHeight;
+  const x = e.clientX - heartSize / 2;
+  const y = e.clientY - heartSize / 2;
 
-    const finalX = Math.random() * screenWidth;
-    const finalY = Math.random() * screenHeight;
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
 
-    const newHeart = {
-      id: Date.now(),
-      startX: x,
-      startY: y,
-      endX: finalX,
-      endY: finalY,
-      text: loveReasons[Math.floor(Math.random() * loveReasons.length)],
-      scale: Math.random() * 0.5 + 1.5,
-      duration: Math.random() * 3 + 4, // 4s to 7s
-    };
+  const finalX = Math.random() * screenWidth;
+  const finalY = Math.random() * screenHeight;
 
-    setHearts((prev) => [...prev, newHeart]);
-
-    setTimeout(() => {
-      setHearts((prev) => prev.filter((heart) => heart.id !== newHeart.id));
-    }, newHeart.duration * 1000);
+  const newHeart = {
+    id: Date.now(),
+    startX: x,
+    startY: y,
+    endX: finalX,
+    endY: finalY,
+    text: loveReasons[Math.floor(Math.random() * loveReasons.length)],
+    scale: Math.random() * 0.5 + 1.5,
+    duration: Math.random() * 3 + 4, // 4s to 7s
   };
+
+  setHearts((prev) => [...prev, newHeart]);
+
+  setTimeout(() => {
+    setHearts((prev) => prev.filter((heart) => heart.id !== newHeart.id));
+  }, newHeart.duration * 1000);
+};
 
   return (
     <div className="lovemessage-container" onClick={handleClick}>
