@@ -7,10 +7,10 @@ const Lovemessage = () => {
   const [hearts, setHearts] = useState([]);
 
 const handleClick = (e) => {
-  const heartSize = 100; // Adjust if needed, depends on actual heart size
+  const heartSize = 100; // Approximate half of the heart size
 
-  const x = e.clientX - heartSize / 2;
-  const y = e.clientY - heartSize / 2;
+  const x = e.clientX - heartSize;
+  const y = e.clientY - heartSize;
 
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
@@ -35,6 +35,7 @@ const handleClick = (e) => {
     setHearts((prev) => prev.filter((heart) => heart.id !== newHeart.id));
   }, newHeart.duration * 1000);
 };
+
 
   return (
     <div className="lovemessage-container" onClick={handleClick}>
