@@ -1,5 +1,5 @@
 const loveReasons = [
-  "I Love You ❤️"
+  "I Love you ❤️",
   "You make me smile every day ❤️",
   "Your kindness melts my heart 😊",
   "You support me no matter what 💪",
