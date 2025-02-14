@@ -7,10 +7,11 @@ const Lovemessage = () => {
   const [hearts, setHearts] = useState([]);
 
 const handleClick = (e) => {
-  const heartSize = 200; // Approximate half of the heart size
+  const heartSize = 200; // Keep heart size as 200px
+  const halfHeartSize = heartSize / 2; // 100px
 
-  const x = e.clientX - heartSize;
-  const y = e.clientY - heartSize;
+  const x = e.clientX - halfHeartSize;
+  const y = e.clientY - halfHeartSize;
 
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
