@@ -7,7 +7,7 @@ const Lovemessage = () => {
   const [hearts, setHearts] = useState([]);
 
 const handleClick = (e) => {
-  const heartSize = 100; // Approximate half of the heart size
+  const heartSize = 200; // Approximate half of the heart size
 
   const x = e.clientX - heartSize;
   const y = e.clientY - heartSize;
