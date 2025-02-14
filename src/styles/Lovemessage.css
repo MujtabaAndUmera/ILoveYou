@@ -21,7 +21,9 @@
   animation: moveAcross var(--duration) ease-in-out forwards,
     fadeOut var(--duration) linear forwards,
     scaleUp var(--duration) ease-in-out forwards;
+  transform: translate(-50%, -50%); /* Centers the heart */
 }
+
 
 .heart-icon {
   font-size: 200px;
@@ -42,14 +44,12 @@
 /* Move the heart to a completely random position */
 @keyframes moveAcross {
   0% {
-    transform: translate(0, 0);
+    transform: translate(-50%, -50%) translate(0, 0);
   }
   100% {
-    left: var(--endX);
-    top: var(--endY);
+    transform: translate(-50%, -50%) translate(var(--endX), var(--endY));
   }
 }
-
 /* Heart scaling effect */
 @keyframes scaleUp {
   0% {
