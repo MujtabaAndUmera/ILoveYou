@@ -8,7 +8,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index:99;
   justify-content: flex-start; /* Ensure space for title */
 }
 
@@ -22,7 +21,7 @@
   animation: moveAcross var(--duration) ease-in-out forwards,
     fadeOut var(--duration) linear forwards,
     scaleUp var(--duration) ease-in-out forwards;
-  transform: translate(-50%, -50%); /* Centers the heart */
+  transform: translate(-50%, -50%);
 }
 
 
